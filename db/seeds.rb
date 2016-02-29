@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Book.destroy_all
+
+Book.create! [
+	{ name: "Macbeth", author: "William Shakespeare" },
+	{ name: "Effective Java", author: "John Bloch" },
+	{ name: "Programming in Java", author: "Joseph Mokenela" },
+	{ name: "Metaprogramming in Ruby", author: "Peter Blank" },
+	{ name: "Design Patterns", author: "Russ Olsen" }
+
+]

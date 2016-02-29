@@ -16,3 +16,10 @@ Book.create! [
 	{ name: "Design Patterns", author: "Russ Olsen" }
 
 ]
+
+macbeth = Book.find_by name: "Macbeth"
+
+macbeth.notes.create! [
+	{ title: "Wow", note: "Brilliant way to study the history of Macbeth" },
+	{ title: "Great", note: "Shakespeare was a genious"}
+]

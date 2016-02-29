@@ -18,6 +18,10 @@ Book.create! [
 
 ]
 
+100.times {
+	|index| Book.create! name: "Book#{index}", author: "Author#{index}"
+}
+
 macbeth = Book.find_by name: "Macbeth"
 
 macbeth.notes.create! [

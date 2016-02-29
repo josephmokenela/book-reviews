@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Reviewer.destroy_all
 Book.destroy_all
 
 Book.create! [
@@ -23,3 +24,13 @@ macbeth.notes.create! [
 	{ title: "Wow", note: "Brilliant way to study the history of Macbeth" },
 	{ title: "Great", note: "Shakespeare was a genious"}
 ]
+
+reviewers = Reviewer.create! [
+	{ name: "Joseph Mokenela", password: "pass" },
+	{ name: "Joseph Mokenela, PhD", password: "password01"}
+]
+
+Book.all.each do |book|
+	book.reviewer = reviewers.sample
+	book.save!
+end

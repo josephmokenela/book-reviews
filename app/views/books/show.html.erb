@@ -3,4 +3,26 @@
 	<%= link_to 'Edit', edit_book_path(@book) %> |
 </div>
 
+<!-- Note partial -->
+<div id="notes">
+	<%= render @book.notes %>
+</div>
+
+<!-- Form for a new note -->
+<div>
+	<%= form_for([@book, @book.notes.new]) do |f| %>
+		<div class="field">
+			<%= f.label :title %>
+			<%= f.text_field :title %>
+		</div>
+		<div class="field">
+			<%= f.label :note %>
+			<%= f.text_area :note, size: "25x6" %>
+		</div>
+		<div class="actions">
+			<%= f.submit "Add new Note" %>
+		</div>
+	<% end %>
+</div>
+
 <%= link_to 'Back', books_path %>
